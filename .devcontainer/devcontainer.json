@@ -1,0 +1,10 @@
+{
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "extensions": [
+    "james-yu.latex-workshop",
+    "taichi.vscode-textlint",
+    "tecosaur.latex-utilities"
+  ]
+}
