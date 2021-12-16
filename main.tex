@@ -1,0 +1,137 @@
+\documentclass[a5paper, 12pt, uplatex, landscape]{jsarticle}
+
+
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{thmtools}
+\usepackage{bm}
+\usepackage[margin=1cm, includefoot]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{xcolor}
+
+\usepackage[hyphens]{url}
+\usepackage{url}
+
+\usepackage{float}
+\usepackage[dvipdfmx]{hyperref, graphicx}
+\usepackage{pxjahyper}
+\hypersetup{
+	colorlinks=false, % リンクに色をつけない設定
+	bookmarks=true, % 以下ブックマークに関する設定
+	bookmarksnumbered=true,
+	pdfborder={0 0 0},
+	bookmarkstype=toc,
+}
+\newcommand{\linedhref}[2]{\underline{\href{#1}{\emph{#2}}}}
+
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=6pt,
+  headfont=\bfseries\sffamily,
+  notefont=\bfseries\sffamily,
+  notebraces={（}{）},
+  postheadspace=1em,
+  numbered=no,
+  qed=\(\square\)
+]{myproof}
+\declaretheorem[title=証明, style=myproof]{myproof}
+\renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
+
+\usepackage{minted}
+\renewcommand{\listingscaption}{ソースコード}
+\usemintedstyle{monokai}
+\definecolor{monokaibg}{HTML}{282828}
+\setminted{bgcolor=monokaibg}
+\definecolor{Text}{HTML}{F8F8F2}
+\AtBeginEnvironment{minted}{\color{Text}}
+
+\usepackage{tikz}
+
+
+\usepackage{scsnowman}
+
+
+\pagecolor[HTML]{000044}
+
+\color{white}
+
+\title{
+{\color{red} \textit{Merry Christmas}} \\
+with \\
+{\color{green} \LaTeX !}
+}
+
+\date{\today}
+\author{ygkn}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  メリクリである．
+\end{abstract}
+
+\tableofcontents
+
+\twocolumn[
+]
+
+\section{雪だるま}
+
+\texttt{scsnowman} パッケージを用いて描画した，
+雪だるまを図 \ref{fig:snowman} に示す．
+
+\begin{figure}[ht]
+  \begin{center}
+    \scsnowman[scale=10,body=white,mouth,eyes=black,hat=red,snow=white,muffler=green,arms=brown]
+  \end{center}
+  \caption{雪だるま}
+  \label{fig:snowman}
+\end{figure}
+
+\begin{center}
+\end{center}
+
+\newpage
+
+\section{Christmas Tree}
+
+Ti\textit{k}Z で描いた Christmas Tree を図 \ref{fig:image} に示す．
+
+\begin{figure}[ht]
+  \begin{center}
+    \color{green}
+    \begin{tikzpicture}[level distance = 1cm,
+        level 1/.style={sibling distance=40mm},
+        level 2/.style={sibling distance=20mm},
+        level 3/.style={sibling distance=10mm}
+      ]
+      \node[yellow] {\Large ★}
+      child {node[red] {●}
+          child {node [yellow] {●}
+              child {node [red] {●}}
+              child {node [purple] {●}}
+            }
+          child {node [blue] {●}
+              child {node [orange] {●}}
+              child {node [white] {●}}}
+        }
+      child {node [orange] {●}
+          child {node [white] {●}
+              child {node [blue] {●}}
+              child {node [red] {●}}}
+          child {node [red] {●}
+              child {node [purple] {●}}
+              child {node [yellow] {●}}}
+        };
+    \end{tikzpicture}
+  \end{center}
+  \caption{Ti\textit{k}Z で描いた Christmas Tree}
+  \label{fig:image}
+\end{figure}
+
+
+\end{document}
