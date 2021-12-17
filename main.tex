@@ -47,9 +47,8 @@
 \AtBeginEnvironment{minted}{\color{Text}}
 
 \usepackage{tikz}
-
-
 \usepackage{scsnowman}
+\usepackage{ulem}
 
 
 \pagecolor[HTML]{000044}
@@ -62,7 +61,7 @@ with \\
 {\color{green} \LaTeX !}
 }
 
-\date{\today}
+\date{2021年クリスマス}
 \author{ygkn}
 
 
@@ -74,63 +73,82 @@ with \\
   メリークリスマスである．
   そこで本研究では，\LaTeX を使用してクリスマスカードを作成する手法を検討する．
   お絵描きには，
-  \texttt{scsnowman} や，Ti\textit{k}Z パッケージを用いた．
-  研究の結果，\LaTeX でクリスマスカードが作成できることが分かった．
+  \texttt{scsnowman} や，Ti\textit{k}Z パッケージを用いる．
+  研究の結果として，\LaTeX でかわいいクリスマスカードが作成できることを示す．
 \end{abstract}
-
-\tableofcontents
 
 \twocolumn[
 ]
 
-\section{雪だるま}
 
-\texttt{scsnowman} パッケージを用いて描画した，
-雪だるまを図 \ref{fig:snowman} に示す．
+\section{研究の背景}
 
-\begin{figure}[ht]
-  \begin{center}
-    \scsnowman[scale=10,body=white,mouth,eyes=black,hat=red,snow=white,muffler=green,arms=brown]
-  \end{center}
-  \caption{雪だるま}
-  \label{fig:snowman}
-\end{figure}
+\textit{Merry Christmas!}
 
-\begin{center}
-\end{center}
+\section{先行研究}
 
-\newpage
+冬や雪に関連する \LaTeX の先行 \sout{ミーム} 研究としては，
+☃ が存在する \cite{tex-meme} ．
 
-\section{Christmas Tree}
+\section{提案手法}
+
+
+\subsection{Christmas Tree}
 
 Ti\textit{k}Z パッケージを用いて描画した，
-Christmas Tree を図 \ref{fig:image} に示す．
+Christmas Tree （かわいい）を図 \ref{fig:image} に示す．
 
 \begin{figure}[ht]
   \begin{center}
     \color{green}
-    \begin{tikzpicture}[level distance = 1cm,
-        level 1/.style={sibling distance=40mm},
-        level 2/.style={sibling distance=20mm},
-        level 3/.style={sibling distance=10mm}
+    \begin{tikzpicture}[level distance = 8mm,
+        level 1/.style={sibling distance=32mm},
+        level 2/.style={sibling distance=16mm},
+        level 3/.style={sibling distance=8mm}
       ]
-      \node[yellow] {\Large ★}
-      child {node[red] {●}
-          child {node [yellow] {●}
-              child {node [red] {●}}
-              child {node [purple] {●}}
+      \node[yellow]
+      {\Large ★}
+      child {
+          node[red] {●}
+          child {
+              node [yellow] {●}
+              child {
+                  node [red] {●}
+                }
+              child {
+                  node [purple] {●}
+                }
             }
-          child {node [blue] {●}
-              child {node [orange] {●}}
-              child {node [white] {●}}}
+          child {
+              node [blue] {●}
+              child {
+                  node [orange] {●}
+                }
+              child {
+                  node [white] {●}
+                }
+            }
         }
-      child {node [orange] {●}
-          child {node [white] {●}
-              child {node [blue] {●}}
-              child {node [red] {●}}}
-          child {node [red] {●}
-              child {node [purple] {●}}
-              child {node [yellow] {●}}}
+      child {
+          node [orange] {●}
+          child {
+              node [white] {●}
+              child {
+                  node [blue] {●}
+                }
+              child {
+                  node [red] {●}
+                }
+            }
+          child {
+              node [red] {●}
+              child {
+                  node [purple] {●}
+                }
+              child {
+                  node [yellow] {●}
+                }
+            }
         };
     \end{tikzpicture}
   \end{center}
@@ -138,5 +156,30 @@ Christmas Tree を図 \ref{fig:image} に示す．
   \label{fig:image}
 \end{figure}
 
+\subsection{雪だるま}
+
+\texttt{scsnowman} パッケージを用いて描画した，
+雪だるま（かわいい）を図 \ref{fig:snowman} に示す．
+
+\begin{figure}[ht]
+  \begin{center}
+    \scsnowman[scale=10,mouth=red,eyes=black,hat=red,snow=white,muffler=green,arms=brown]
+  \end{center}
+  \caption{雪だるま}
+  \label{fig:snowman}
+\end{figure}
+
+
+
+\section{まとめと今後の予定}
+
+\textit{We wish you a merry Christmas,}
+
+\textit{...And a happy new year!}
+
+
+\begin{thebibliography}{10}
+  \bibitem{tex-meme} TeX/LaTeX ミーム集【初心者向け】，藤原 惟 (オンライン)，入手先 ＜\url{https://zenn.dev/sky_y/articles/tex-advent-2020-meme}＞， (参照 2021-12-19)
+\end{thebibliography}
 
 \end{document}
